@@ -1,0 +1,23 @@
+.visually-hidden {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(100%);
+	padding: 0;
+	border: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.skip-nav {
+	position: absolute;
+	left: -10000px;
+	top: 1.5rem;
+	overflow: hidden;
+
+	&:focus {
+		left: 5rem;
+		position: fixed;
+		z-index: 101;
+	}
+}

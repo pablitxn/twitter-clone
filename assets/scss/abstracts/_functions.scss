@@ -1,0 +1,73 @@
+///	Converts a number of type 'string' to a number of type 'number'
+/// @param {string} $value - the string number to be converted
+/// @return {number}
+
+@function to-number($value) {
+	@if type-of($value) == "number" {
+		@return $value;
+	} @else if type-of($value) != "string" {
+		$_: log("Value for `to-number` should be a number or a string.");
+	}
+
+	$result: 0;
+	$digits: 0;
+	$minus: str-slice($value, 1, 1) == "-";
+	$numbers: (
+		"0": 0,
+		"1": 1,
+		"2": 2,
+		"3": 3,
+		"4": 4,
+		"5": 5,
+		"6": 6,
+		"7": 7,
+		"8": 8,
+		"9": 9,
+	);
+
+	@for $i from if($minus, 2, 1) through str-length($value) {
+		$character: str-slice($value, $i, $i);
+
+		@if not(index(map-keys($numbers), $character) or $character == ".") {
+			@return to-length(if($minus, -$result, $result), str-slice($value, $i));
+		}
+
+		@if $character == "." {
+			$digits: 1;
+		} @else if $digits == 0 {
+			$result: $result * 10 + map-get($numbers, $character);
+		} @else {
+			$digits: $digits * 10;
+			$result: $result + map-get($numbers, $character) / $digits;
+		}
+	}
+
+	@return if($minus, -$result, $result);
+}
+
+///	Gets the first index of array
+///	@param {list} $list
+///	@return {string}
+
+@function first($list) {
+	@return nth($list, 1);
+}
+
+///	Gets the last index of array
+///	@param {list} $list
+///	@return {string}
+
+@function last($list) {
+	@return nth($list, length($list));
+}
+
+///	Converts a size in px to its rem equivalent
+///	@param {string} $text-size
+///	@return {string}
+
+@function to-rem($text-size) {
+	$split-text-size: str-slice($text-size, 1, -3);
+
+	$text-to-rem: to-number(first($split-text-size)) / 16;
+	@return #{$text-to-rem}rem;
+}

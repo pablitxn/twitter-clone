@@ -1,0 +1,24 @@
+.emphasis {
+	font-family: "rubik_medium";
+}
+
+.fontset {
+	/* 
+		Sobreescribe la fuente actual
+		*/
+	&-light {
+		//letra "liviana"
+		font-family: "Rubik Light" !important;
+		font-weight: 300;
+	}
+	&-regular {
+		// letral normal
+		font-family: "Rubik" !important;
+		font-weight: 400;
+	}
+	&-medium {
+		// efecto bold
+		font-family: "Rubik Medium" !important;
+		font-weight: 500;
+	}
+}
