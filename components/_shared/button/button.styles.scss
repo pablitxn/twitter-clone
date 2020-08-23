@@ -1,0 +1,15 @@
+@import "../../../assets/scss/main.scss";
+
+button {
+  align-items: center;
+  background: $black;
+  border-radius: 9999px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 8px 24px;
+  transition: opacity 0.3s ease;
+}

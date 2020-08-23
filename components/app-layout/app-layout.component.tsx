@@ -4,7 +4,8 @@ import "./app-layout.styles.scss";
 interface IAppLayout {
 	children: React.ReactNode;
 }
-const AppLayout = ({ children }) => {
+
+const AppLayout = ({ children }: IAppLayout) => {
 	return (
 		<>
 			<div className="app-layout">

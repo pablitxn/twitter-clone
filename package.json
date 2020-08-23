@@ -8,9 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/firebase": "^3.2.1",
     "@zeit/next-sass": "^1.0.1",
     "eslint": "^7.7.0",
     "eslint-plugin-react": "^7.20.6",
+    "firebase": "^7.19.0",
     "next": "9.5.2",
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",

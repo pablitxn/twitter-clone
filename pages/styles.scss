@@ -1,0 +1,44 @@
+@import "../assets/scss/main.scss";
+
+.home {
+  display: grid;
+  height: 100%;
+  place-content: center;
+  place-items: center;
+
+  img {
+    width: 120px;
+  }
+
+  div {
+    margin-top: 16px;
+  }
+
+  h1 {
+    color: $secondary;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    color: $primary;
+    font-size: 21px;
+    margin: 0;
+  }
+}
+
+
+html,
+body {
+  background-image:
+    radial-gradient(#0099ff4d 1px, #fdfdfd 1px),
+    radial-gradient(#0099ff4d 1px, #fdfdfd 1px);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
